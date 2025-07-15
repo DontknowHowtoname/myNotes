@@ -2,7 +2,11 @@ Title: CCAFusion: Cross-Modal Coordinate Attention  Network for Infrared and Vis
 
 labels: #imagefusion 
 
-Brief:
+# Brief
+
+该论文设计了跨模态图像融合策略：特征感知融合模块+特征增强融合模块，开发了新的多约束损失函数，应用了多尺度跳跃链接网络，引入了坐标注意力机制。
+
+**数据类型**: RGB-灰度 & RGB-IR
 
 # Translation
 
@@ -14,3 +18,18 @@ Brief:
 
 在广泛使用的数据集上进行的广泛实验表明，我们的 CCAFusion 在定性评估和定量测量方面都取得了优于最先进的图像融合方法的性能。此外，在显著目标检测中的应用揭示了我们的 CCAFusion 在高级视觉任务中的潜力，可以有效地提高检测性能。
 
+# Notes
+
+不使用通道注意力（如SE模块），而是采用了坐标（像素角度）的注意力机制，可以同时学到通道、位置和长程依赖
+
+### 长程依赖
+
+距离较远的局部关系
+
+eg. "The cat, which chased the dog that ran across the field and jumped over the fence, was black." 句子开头的 "cat" 和结尾的 "was" 之间有直接的主谓一致关系。
+
+eg. 在图像中： 想象一张全身人像照片。人的眼睛（在图像上方）和他的鞋子（在图像下方）在空间上相距很远。
+
+SE模块简单粗暴的在S阶段直接将每一个通道的特征图压缩成了一个点（使用全局平均池化），从根本上失去了学习到位置信息的机会。
+
+而坐标注意力，则分别在x轴y轴两个方向做单列单行的池化，保留了特征x，y坐标的信息，从而能够学习到位置与方向信息，从而学习到了长程依赖关系。

@@ -6,6 +6,6 @@
 
 模态融合
 
-1. [CCAFusion: Cross-Modal Coordinate Attention  Network for Infrared and Visible Image Fusion](./CCAFusion.md)
+1. [CCAFusion: Cross-Modal Coordinate Attention  Network for Infrared and Visible Image Fusion](./papers/CCAFusion.md)
     > github地址：[代码在master分支](https://github.com/Li-Xiaoling/CCAFusion)；
     > 发表位置：TCSVT；

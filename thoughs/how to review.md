@@ -14,6 +14,7 @@ Generate by Gemini 2.5 pro
     2.  **作者提出的解决方案是什么？** (What is their proposed solution/contribution?)
     3.  **这个贡献重要吗？新颖吗？** (Is the contribution significant and novel?)
     4.  **从图表中看，结果支持他们的主张吗？** (Do the results seem to support the claims?)
+    5.  **实验中的方法对比是否充分，方法是否陈旧**
 
 完成这一遍后，您应该对这篇论文有了“第一印象”。它是一篇突破性的好文章，还是一个有明显缺陷的工作，或是一个中规中矩的改进？
 
